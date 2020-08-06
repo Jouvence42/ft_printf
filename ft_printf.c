@@ -91,14 +91,15 @@ int	ft_printf(const char *format, ...)
 	int		place;
 	t_check_flags	*check_flags;
 	int		temp;
-//	int 	j;
+	int 	j;
 
 	va_start(params, format);
 	i = 0;
 	place = 0;
 	check_flags = (t_check_flags*)(malloc(sizeof(t_check_flags)));
 	ft_init_struct(check_flags);
-//	j = ft_intlen((int)va_arg(params, int));
+	j = ft_intlen((int)va_arg(params, int));
+	printf("j = %d\n", j);
 	temp = 1;
 	while (format[i] != '\0')
 	{
@@ -114,7 +115,7 @@ int	ft_printf(const char *format, ...)
 					i++;
 				}
 				temp = 1;
-				ft_printstruct(check_flags);
+				ft_printstruct(check_flags, j);
 				i++;	
 			}
 			else

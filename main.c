@@ -8,6 +8,6 @@ int main()
 	int	d = 42;
 
 //	printf("printf : Coucou %.12d toi\n", d);
-	ft_printf("mine : Coucou %.12d toi\n", d);
+	ft_printf("mine : Coucou %12d toi\n", d);
 	return (0);
 }
