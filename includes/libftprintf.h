@@ -19,8 +19,9 @@ typedef struct	s_check_flags
 //	precision_size*/
 }		t_check_flags;
 
-int	ft_printf(const char *format, ...);
-int	ft_precision(const char *format, t_check_flags *check_flags);
-int	ft_zero(const char *format, t_check_flags *check_flags);
+int		ft_printf(const char *format, ...);
+int		ft_precision(const char *format, t_check_flags *check_flags);
+int		ft_zero(const char *format, t_check_flags *check_flags);
+void	ft_printstruct(t_check_flags *check_flags);
 
 #endif

@@ -69,16 +69,16 @@ int	ft_flags(const char *format, va_list params, t_check_flags *check_flags)
 	if (format[i] >= '1' && format[i] <= '9')
 	{
 		check_flags->width = ft_atoi(format, &i);
-		return (1);
+		return (check_flags->width);
 	}
 	if (format[i] == '.' && format[i + 1] != 'c')
 	{
-		while (format[i + 1] >= 1 && format[i + 1] <= 9)
+		while (format[i + 1] >= '1' && format[i + 1] <= '9')
 		{
 			check_flags->pr = ft_atoi(&format[i + 1], &i);
 			i++;
 		}
-		return (1);
+		return (check_flags->pr);
 	}
 
 	return (0);
@@ -91,26 +91,31 @@ int	ft_printf(const char *format, ...)
 	int		place;
 	t_check_flags	*check_flags;
 	int		temp;
+//	int 	j;
 
 	va_start(params, format);
 	i = 0;
 	place = 0;
 	check_flags = (t_check_flags*)(malloc(sizeof(t_check_flags)));
 	ft_init_struct(check_flags);
+//	j = ft_intlen((int)va_arg(params, int));
 	temp = 1;
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			if (ft_flags(&format[i], params, check_flags) == 1)
+			if (ft_flags(&format[i], params, check_flags) != 0)
 			{
-//			printf("HEHO\n");
-				while (temp == 1)
+				while (temp != 0)
 				{
 					temp = ft_flags(&format[i], params, check_flags);
+					temp = 0;
 					i++;
 				}
+				temp = 1;
+				ft_printstruct(check_flags);
+				i++;	
 			}
 			else
 			{
@@ -118,8 +123,9 @@ int	ft_printf(const char *format, ...)
 					ft_putchar((char)va_arg(params, int));
 				if (format[i] == 'd' || format[i] == 'i')
 					ft_putstr(ft_itoa((int)va_arg(params, char*)));
+				i++;
 			}
-			i = i + 1;
+//			i = i + 1;
 //			place = ft_flags(&format[i + 1], params, check_flags);
 //			ft_pars(&format[i + place], params, check_flags);
 //			ft_printstruct();
