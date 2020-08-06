@@ -116,6 +116,8 @@ int	ft_printf(const char *format, ...)
 			{
 				if (format[i] == 'c')
 					ft_putchar((char)va_arg(params, int));
+				if (format[i] == 'd' || format[i] == 'i')
+					ft_putstr(ft_itoa((int)va_arg(params, char*)));
 			}
 			i = i + 1;
 //			place = ft_flags(&format[i + 1], params, check_flags);

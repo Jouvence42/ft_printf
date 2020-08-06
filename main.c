@@ -5,9 +5,9 @@ int main()
 {
 //	char	str[] = "Bene";
 //	char	c = 'B';
-//	int	d = 42;
+	int	d = 0;
 
-	printf("printf : Coucou %9c toi\n", 'B');
-	ft_printf("mine : Coucou %9c toi\n", 'B');
+	printf("printf : Coucou %d toi\n", d);
+	ft_printf("mine : Coucou %d toi\n", d);
 	return (0);
 }
