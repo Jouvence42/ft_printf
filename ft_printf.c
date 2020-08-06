@@ -66,9 +66,8 @@ int	ft_flags(const char *format, va_list params, t_check_flags *check_flags)
 	int i;
 
 	i = 0;
-	if (format[i] >= 1 && format[i] <= 9)
+	if (format[i] >= '1' && format[i] <= '9')
 	{
-		printf("UUU\n");
 		check_flags->width = ft_atoi(format, &i);
 		return (1);
 	}
@@ -87,7 +86,7 @@ int	ft_flags(const char *format, va_list params, t_check_flags *check_flags)
 
 int	ft_printf(const char *format, ...)
 {
-	va_list		params; /*verifier nomenclature params entre parentheses*/
+	va_list		params;
 	int		i;
 	int		place;
 	t_check_flags	*check_flags;
@@ -106,10 +105,11 @@ int	ft_printf(const char *format, ...)
 			i++;
 			if (ft_flags(&format[i], params, check_flags) == 1)
 			{
-			printf("prout\n");
+//			printf("HEHO\n");
 				while (temp == 1)
 				{
 					temp = ft_flags(&format[i], params, check_flags);
+					i++;
 				}
 			}
 			else
@@ -117,7 +117,7 @@ int	ft_printf(const char *format, ...)
 				if (format[i] == 'c')
 					ft_putchar((char)va_arg(params, int));
 			}
-			i = i + 2;
+			i = i + 1;
 //			place = ft_flags(&format[i + 1], params, check_flags);
 //			ft_pars(&format[i + place], params, check_flags);
 //			ft_printstruct();

@@ -7,7 +7,7 @@ int main()
 //	char	c = 'B';
 //	int	d = 42;
 
-	printf("printf : Coucou %10c toi\n", 'B');
-	ft_printf("mine : Coucou %10c toi\n", 'B');
+	printf("printf : Coucou %9c toi\n", 'B');
+	ft_printf("mine : Coucou %9c toi\n", 'B');
 	return (0);
 }

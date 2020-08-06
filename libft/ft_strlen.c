@@ -1,4 +1,4 @@
-#include "libft.c"
+#include "libft.h"
 
 int	ft_strlen(char *str)
 {
