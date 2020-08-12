@@ -107,7 +107,6 @@ int	ft_printf(const char *format, ...)
 			{
 //				j = ft_intlen((int)va_arg(params, int));
 				j = ft_intlen(check_flags->pr);
-				printf("j = %d\n", j);
 				while (temp != 0)
 				{
 					temp = ft_flags(&format[i], params, check_flags);
@@ -116,17 +115,18 @@ int	ft_printf(const char *format, ...)
 				}
 				temp = 1;
 				ft_printstruct(check_flags, j);
-	//			i = (check_flags->pr - j);
-				i++;
+				i = i + (check_flags->pr);
 			}
-			else
-			{
+//			else
+//			{
 				if (format[i] == 'c')
 					ft_putchar((char)va_arg(params, int));
 				if (format[i] == 'd' || format[i] == 'i')
 					ft_putstr(ft_itoa((int)va_arg(params, char*)));
+				if (format[i] == 's')
+					ft_putstr((char*)va_arg(params, char*));
 				i++;
-			}
+//			}
 		}
 		write(1, &format[i], 1);
 		i++;

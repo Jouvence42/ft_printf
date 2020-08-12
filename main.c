@@ -3,11 +3,11 @@
 
 int main()
 {
-//	char	str[] = "Bene";
+	char	str[] = "Bene";
 //	char	c = 'B';
-	int	d = 42;
+//	int	d = 42;
 
 //	printf("printf : Coucou %.12d toi\n", d);
-	ft_printf("mine Coucou %.12d toi\n", d);
+	ft_printf("mine Coucou %s toi\n", str);
 	return (0);
 }

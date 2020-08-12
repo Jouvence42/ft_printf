@@ -14,7 +14,7 @@ void	ft_printstruct(t_check_flags *check_flags, int j)
     } 
     else if (check_flags->pr != 0)
     {
-        while (check_flags->pr >= j)
+        while (check_flags->pr > j)
         {
             ft_putchar('0');
             (check_flags->pr)--;
