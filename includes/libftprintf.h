@@ -15,8 +15,6 @@ typedef struct	s_check_flags
 	int	fzero;
 	int 	z;
 	int	fstar;
-//	size_arg
-//	precision_size*/
 }		t_check_flags;
 
 int		ft_printf(const char *format, ...);

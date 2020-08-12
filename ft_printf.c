@@ -80,7 +80,6 @@ int	ft_flags(const char *format, va_list params, t_check_flags *check_flags)
 		}
 		return (check_flags->pr);
 	}
-
 	return (0);
 }
 
@@ -97,9 +96,7 @@ int	ft_printf(const char *format, ...)
 	i = 0;
 	place = 0;
 	check_flags = (t_check_flags*)(malloc(sizeof(t_check_flags)));
-	ft_init_struct(check_flags);
-	j = ft_intlen((int)va_arg(params, int));
-	printf("j = %d\n", j);
+	ft_init_struct(check_flags);	
 	temp = 1;
 	while (format[i] != '\0')
 	{
@@ -108,6 +105,9 @@ int	ft_printf(const char *format, ...)
 			i++;
 			if (ft_flags(&format[i], params, check_flags) != 0)
 			{
+//				j = ft_intlen((int)va_arg(params, int));
+				j = ft_intlen(check_flags->pr);
+				printf("j = %d\n", j);
 				while (temp != 0)
 				{
 					temp = ft_flags(&format[i], params, check_flags);
@@ -116,7 +116,8 @@ int	ft_printf(const char *format, ...)
 				}
 				temp = 1;
 				ft_printstruct(check_flags, j);
-				i++;	
+	//			i = (check_flags->pr - j);
+				i++;
 			}
 			else
 			{
@@ -126,11 +127,6 @@ int	ft_printf(const char *format, ...)
 					ft_putstr(ft_itoa((int)va_arg(params, char*)));
 				i++;
 			}
-//			i = i + 1;
-//			place = ft_flags(&format[i + 1], params, check_flags);
-//			ft_pars(&format[i + place], params, check_flags);
-//			ft_printstruct();
-//			i = i + place + 2;
 		}
 		write(1, &format[i], 1);
 		i++;
