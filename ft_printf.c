@@ -1,3 +1,5 @@
+
+
 #include "includes/libftprintf.h"
 #include "libft/libft.h"
 #include <stdio.h>
@@ -76,7 +78,9 @@ int	ft_flags(const char *format, va_list params, t_check_flags *check_flags)
 		while (format[i + 1] >= '1' && format[i + 1] <= '9')
 		{
 			check_flags->pr = ft_atoi(&format[i + 1], &i);
+		//	printf("1 %c\n", format[i + 1]);
 			i++;
+		//	printf("2 %c\n", format[i + 1]);
 		}
 		return (check_flags->pr);
 	}
