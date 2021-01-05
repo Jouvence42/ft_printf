@@ -82,7 +82,6 @@ int	ft_flags(const char *format, va_list params, t_check_flags *check_flags)
 			i++;
 		//	printf("2 %c\n", format[i + 1]);
 		}
-	//	printf("||||check = %d \n||||", check_flags->pr);
 		return (check_flags->pr);
 	}
 	return (0);
@@ -124,16 +123,12 @@ int	ft_printf(const char *format, ...)
 			}
 //			else
 //			{
-				if (format[i] == '.')
-					i++;
 				if (format[i] == 'c')
 					ft_putchar((char)va_arg(params, int));
 				if (format[i] == 'd' || format[i] == 'i')
 					ft_putstr(ft_itoa((int)va_arg(params, char*)));
 				if (format[i] == 's')
 					ft_putstr((char*)va_arg(params, char*));
-				if (format[i] == '%')
-					write(1, "%", 1);
 				i++;
 //			}
 		}
