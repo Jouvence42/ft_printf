@@ -6,7 +6,7 @@
 /*   By: sothomas <sothomas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 14:59:31 by sothomas          #+#    #+#             */
-/*   Updated: 2021/01/11 14:59:41 by sothomas         ###   ########.fr       */
+/*   Updated: 2021/01/11 17:31:15 by sothomas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,30 +27,6 @@ void	ft_init_struct(t_check_flags *check_flags)
 }
 
 /*
-int	ft_flags(const char *format, va_list params, t_check_flags *check_flags)
-{
-	int i;
-	int size;
-
-	i = 1;
-	size = 0;
-	if (*format == 'd')
-		size = 1;
-	if (*format == '.')
-	{
-		check_flags->pr = 1;
-		size = ft_precision(format, check_flags);
-	}
-	if (*format == '0')
-	{
-		check_flags->z = 1;
-		size = ft_zero(format, check_flags);
-	}
-//	printf("size dans flags = %d\n", size);
-	return (size);
-}
-
-
 void	ft_pars(const char *format, va_list params, t_check_flags *check_flags)
 {
 	while ((*format == '.' || *format == '-' || *format == '*'
@@ -78,11 +54,6 @@ int	ft_flags(const char *format, va_list params, t_check_flags *check_flags)
 	int i;
 
 	i = 0;
-/*	if (format[i] == '0')			*TRAITER LE CAS OU d == 0
-	{
-		write(1, "0", 1);
-		i++;
-	}*/
 	if (format[i] >= '1' && format[i] <= '9')
 	{
 		check_flags->width = ft_atoi(format, &i);
@@ -93,11 +64,8 @@ int	ft_flags(const char *format, va_list params, t_check_flags *check_flags)
 		while (format[i + 1] >= '1' && format[i + 1] <= '9')
 		{
 			check_flags->pr = ft_atoi(&format[i + 1], &i);
-	//		printf("1 %c\n", format[i + 1]);
 			i++;
-		//	printf("2 %c\n", format[i + 1]);
 		}
-//		printf("||||check = %d \n||||", check_flags->pr);
 		return (check_flags->pr);
 	}
 	return (0);
@@ -123,14 +91,8 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == '0')
-			{
-				write(1, "0", 1);
-				i++;
-			}
 			if (ft_flags(&format[i], params, check_flags) != 0)
 			{
-//				j = ft_intlen((int)va_arg(params, int));
 				j = ft_intlen(check_flags->pr);
 				while (temp != 0)
 				{
@@ -142,8 +104,6 @@ int	ft_printf(const char *format, ...)
 				ft_printstruct(check_flags, j);
 				i = i + (check_flags->pr);
 			}
-//			else
-//			{
 				if (format[i] == '.')
 					i++;
 				if (format[i] == 'c')
@@ -155,7 +115,6 @@ int	ft_printf(const char *format, ...)
 				if (format[i] == '%')
 					write(1, "%", 1);
 				i++;
-//			}
 		}
 		write(1, &format[i], 1);
 		i++;

@@ -6,7 +6,7 @@
 /*   By: sothomas <sothomas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 14:59:48 by sothomas          #+#    #+#             */
-/*   Updated: 2021/01/11 14:59:51 by sothomas         ###   ########.fr       */
+/*   Updated: 2021/01/11 17:16:29 by sothomas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	ft_precision(const char *format, t_check_flags *check_flags)
 
 	i = 1;
 	size = 1;
-//	printf("format = %s\n", format);
 	while (format[i] >= '0' && format[i] <= '9')
 	{
 		size++;
@@ -33,11 +32,7 @@ int	ft_precision(const char *format, t_check_flags *check_flags)
 		while (ft_isdigit(format[i] == 1))
 			i++;
 	}
-//	printf("d = %s\n", check_flag->print);
-//	printf("atoi = %d\n", check_flags->precision);
-//	printf("place dans precision = %d\n", size);
 	return (size);
-//	printf("precision = %d\n", check_flags->precision);
 }
 
 int	ft_zero(const char *format, t_check_flags *check_flags)
