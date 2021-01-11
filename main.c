@@ -4,10 +4,10 @@
 int main()
 {
 //	char	str[] = "Bene";
-	char	c = 'B';
-//	int	d = 42;
+//	char	c = 'B';
+	int	d = 0;
 
-	printf("printf : Coucou %c toi\n", c);
-	ft_printf("mine : Coucou %c toi\n", c);
+	printf("printf : Coucou %d toi\n", d);
+	ft_printf("ttmine : Coucou %d toi\n", d);
 	return (0);
 }

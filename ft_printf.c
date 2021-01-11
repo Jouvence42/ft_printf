@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sothomas <sothomas@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/11 14:59:31 by sothomas          #+#    #+#             */
+/*   Updated: 2021/01/11 14:59:41 by sothomas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "includes/libftprintf.h"
 #include "libft/libft.h"
@@ -68,6 +78,11 @@ int	ft_flags(const char *format, va_list params, t_check_flags *check_flags)
 	int i;
 
 	i = 0;
+/*	if (format[i] == '0')			*TRAITER LE CAS OU d == 0
+	{
+		write(1, "0", 1);
+		i++;
+	}*/
 	if (format[i] >= '1' && format[i] <= '9')
 	{
 		check_flags->width = ft_atoi(format, &i);
@@ -78,11 +93,11 @@ int	ft_flags(const char *format, va_list params, t_check_flags *check_flags)
 		while (format[i + 1] >= '1' && format[i + 1] <= '9')
 		{
 			check_flags->pr = ft_atoi(&format[i + 1], &i);
-		//	printf("1 %c\n", format[i + 1]);
+	//		printf("1 %c\n", format[i + 1]);
 			i++;
 		//	printf("2 %c\n", format[i + 1]);
 		}
-	//	printf("||||check = %d \n||||", check_flags->pr);
+//		printf("||||check = %d \n||||", check_flags->pr);
 		return (check_flags->pr);
 	}
 	return (0);
@@ -108,6 +123,11 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (format[i] == '0')
+			{
+				write(1, "0", 1);
+				i++;
+			}
 			if (ft_flags(&format[i], params, check_flags) != 0)
 			{
 //				j = ft_intlen((int)va_arg(params, int));

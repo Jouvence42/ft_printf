@@ -6,7 +6,7 @@
 /*   By: bkany <bkany@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 13:37:07 by bkany             #+#    #+#             */
-/*   Updated: 2021/01/05 14:47:44 by sothomas         ###   ########.fr       */
+/*   Updated: 2021/01/05 17:56:25 by sothomas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,8 +139,8 @@ int main(void)
 //	ft_printf("1abcblabla%.dhehe\n", chiffre1);
 	printf("\n");
 	
-	printf("2abcblabla%.5dhehe\n", chiffre);    
-	ft_printf("2abcblabla%.5dhehe\n", chiffre);
+	printf("2abcblabla%.24dhehe\n", chiffre);    
+	ft_printf("2abcblabla%.24dhehe\n", chiffre);
 //	printf("2abcblabla%.5dhehe\n", chiffre1);
 //	ft_printf("2abcblabla%.5dhehe\n", chiffre1);
 	printf("\n");
