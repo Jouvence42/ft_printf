@@ -2,7 +2,7 @@ NAME = libft.a
 
 CC = gcc 
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = 
 
 SRCS = ft_strlen.c\
 			ft_isalpha.c\
@@ -39,9 +39,9 @@ SRCS = ft_strlen.c\
 			ft_putendl_fd.c\
 			ft_putnbr_fd.c\
 			
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRCS:.c=.o)
 
-$(OBJ) = $(SRC)
+$(OBJ) = $(SRCS)
 	$(CC) -o $@ -c $<
 
 all :
@@ -51,7 +51,7 @@ clean :
 	rm -rf $(OBJ)
 
 fclean : clean
-	rm -rf$(NAME)
+	rm -rf $(NAME)
 
 re : 
 	fclean all

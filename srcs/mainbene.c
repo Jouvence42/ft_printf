@@ -6,7 +6,7 @@
 /*   By: bkany <bkany@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 13:37:07 by bkany             #+#    #+#             */
-/*   Updated: 2020/04/17 12:21:29 by bkany            ###   ########.fr       */
+/*   Updated: 2021/01/05 17:56:25 by sothomas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,53 +134,60 @@ int main(void)
 	int chiffre1 = -42;
 	
 	printf("1abcblabla%.dhehe\n", chiffre);
-//	ft_printf("1abcblabla%.dhehe\n", chiffre);
-	printf("1abcblabla%.dhehe\n", chiffre1);
+	ft_printf("1abcblabla%.dhehe\n", chiffre);
+//	printf("1abcblabla%.dhehe\n", chiffre1);
 //	ft_printf("1abcblabla%.dhehe\n", chiffre1);
 	printf("\n");
 	
-	printf("2abcblabla%.5dhehe\n", chiffre);    
-//	ft_printf("2abcblabla%.5dhehe\n", chiffre);
-	printf("2abcblabla%.5dhehe\n", chiffre1);
+	printf("2abcblabla%.24dhehe\n", chiffre);    
+	ft_printf("2abcblabla%.24dhehe\n", chiffre);
+//	printf("2abcblabla%.5dhehe\n", chiffre1);
 //	ft_printf("2abcblabla%.5dhehe\n", chiffre1);
 	printf("\n");
 	
+	printf("3abcblabla%dhehe\n", chiffre);
+	ft_printf("3abcblabla%dhehe\n", chiffre);
+//	printf("3abcblabla%dhehe\n", chiffre1);
+//	ft_printf("3abcblabla%dhehe\n", chiffre1);
+	printf("\n");
+	
 	printf("4abcblabla%5dhehe\n", chiffre);
-//	ft_printf("4abcblabla%5dhehe\n", chiffre);
-	printf("4abcblabla%5dhehe\n", chiffre1);
+	ft_printf("4abcblabla%5dhehe\n", chiffre);
+//	printf("4abcblabla%5dhehe\n", chiffre1);
 //	ft_printf("4abcblabla%5dhehe\n", chiffre1);
 	printf("\n");
 	
 	printf("6abcblabla%-5dhehe\n", chiffre);
-//	ft_printf("6abcblabla%-5dhehe\n", chiffre);
-	printf("6abcblabla%-5dhehe\n", chiffre1);
+	ft_printf("6abcblabla%-5dhehe\n", chiffre);
+//	printf("6abcblabla%-5dhehe\n", chiffre1);
 //	ft_printf("6abcblabla%-5dhehe\n", chiffre1);	
 	printf("\n");
-	
-//	ft_printf("10abcblabla%05dhehe\n", chiffre1);	
+	/*
+	ft_printf("10abcblabla%05dhehe\n", chiffre1);	
 	printf("10abcblabla%05dhehe\n", chiffre); 
 	printf("\n"); 
 	printf("10abcblabla%05dhehe\n", chiffre1);  
 	printf("\n");
 	
 	printf("13abcblabla%-15.8dhehe\n", chiffre);  
-//	ft_printf("13abcblabla%-15.8dhehe\n", chiffre);
+	ft_printf("13abcblabla%-15.8dhehe\n", chiffre);
 	printf("13abcblabla%-15.8dhehe\n", chiffre1); 
-//	ft_printf("13abcblabla%-15.8dhehe\n", chiffre1);	
+	ft_printf("13abcblabla%-15.8dhehe\n", chiffre1);	
 	printf("\n");
 	
 	
 	printf("16abcblabla%15.8dhehe\n", chiffre);  
-//	ft_printf("16abcblabla%15.8dhehe\n", chiffre);
+	ft_printf("16abcblabla%15.8dhehe\n", chiffre);
 	printf("16abcblabla%15.8dhehe\n", chiffre1);  
-//	ft_printf("16abcblabla%15.8dhehe\n", chiffre1);	
+	ft_printf("16abcblabla%15.8dhehe\n", chiffre1);	
 	printf("\n");
 	
 	printf("17abcblabla%15.*dhehe\n", 8, chiffre);   
-//	ft_printf("17abcblabla%+15.*dhehe\n", 8, chiffre);
+	ft_printf("17abcblabla%+15.*dhehe\n", 8, chiffre);
 	printf("17abcblabla%15.*dhehe\n", 8, chiffre1);   
-//	ft_printf("17abcblabla%+15.*dhehe\n", 8, chiffre1);	
+	ft_printf("17abcblabla%+15.*dhehe\n", 8, chiffre1);	
 	printf("\n");
+	*/
 	
 	return (0);
 }
